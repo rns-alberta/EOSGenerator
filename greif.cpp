@@ -286,7 +286,7 @@ void greif(){
     surfEOS.push_back("eosNV");
     surfEOS.push_back("eosFPS");
     surfEOS.push_back("eosBPS");
-    int sEOSnum=2;//0 = NV   1 = FPS 2 = BBB2
+    int sEOSnum=2;//0 = NV   1 = FPS 2 = BPS
     //Maximum Mass
     double Max_mass_limit=1.97; //solar masses
 
