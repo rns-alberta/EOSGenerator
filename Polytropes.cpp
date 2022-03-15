@@ -449,7 +449,7 @@ void Polytropes(){//Main Program
   vector<string> surfEOS;
   surfEOS.push_back("eosNV");
   surfEOS.push_back("eosFPS");
-  surfEOS.push_back("eosBBB2");
+  surfEOS.push_back("eosBPS");
   int fileNum=0;
 
 
@@ -460,12 +460,12 @@ void Polytropes(){//Main Program
   cin>>num;
   
   //choose crust EOS
-  int sEOSnum=0;//0 = NV   1 = FPS 2 = BBB2
+  int sEOSnum=0;//0 = NV   1 = FPS 2 = BPS
 
   //choose crust density
-  double d_crust = 1.1*2.28*TMath::Power(10,14);
+  double d_crust = 1.1*2.28*TMath::Power(10,14);//g/cm^3
   
-  //normilized central mass density
+  //maximum central mass density
   double Maxd0=8.3;//*2.28 10^14 g/cm^3
 
   //Maximum Mass
@@ -523,12 +523,6 @@ void Polytropes(){//Main Program
     string a1,a2,a3,a4,a5;
     int data;
     while( getline(myinputfile,line) ){
-      if(count==0){
-	stringstream liness = stringstream(line);
-	getline(liness,a1,' ');
-	data=stod(a1);
-      }
-      else{
 	stringstream liness = stringstream(line);
 	getline(liness,a1,' ');
 	getline(liness,a2,' ');
@@ -544,11 +538,9 @@ void Polytropes(){//Main Program
 	vEnergyDensity.push_back(stod(a1)*kappa*G/(c*c));
 	vEnthalpy.push_back(stod(a3)/(c*c));
 	vDensity.push_back(stod(a4)*Mb*kappa*G/(c*c));
-      }
-      count++;
     }
     data=v_e.size();
-    count=0;
+
     //Take the Surface EOS -END
 
 
