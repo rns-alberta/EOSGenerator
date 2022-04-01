@@ -918,9 +918,6 @@ void Polytropes(){//Main Program
 
 
 
-
-
-   if(v_r.at(0)<13) continue;
     
     
  
